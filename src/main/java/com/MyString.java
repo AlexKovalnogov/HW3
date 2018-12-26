@@ -36,7 +36,6 @@ public class MyString {
         return infoAboutOnes + infoAboutZeros;
     }
 
-
     private ArrayList<Integer> getIndexesOfOnesFromString(String s) {
         ArrayList<Integer> indexesOfOnes = new ArrayList();
         for (int i = 0; i < s.length(); i++) {
@@ -99,11 +98,10 @@ public class MyString {
         getTheLongestContinuosChainOfOnesAndZeros(s);
     }
 
-
     public static void main(String[] args) {
 
-           String s1 = "10010001110000001111";
-       /// String s1 = "";
+        String s1 = "10010001110000001111";
+        /// String s1 = "";
         new MyString().my(s1);
 
     }
