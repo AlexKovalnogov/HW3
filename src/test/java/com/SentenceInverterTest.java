@@ -26,6 +26,6 @@ public class SentenceInverterTest {
 
     @Test
     public void testThatConvertiongSentensewithPunctuationSignsSuccessful() {
-        Assert.assertEquals(senInv.getConvertedSentence("qwerty,  asdfg,,  ,,  dffdf.."), "ytrewq adg  dff ");
+        Assert.assertEquals(senInv.getConvertedSentence("qwerty,  asdfg,,  ,,  dffdf.."), "ytrewq adg  dff. ");
     }
 }

@@ -53,10 +53,5 @@ public class SentenceInverter {
         return outputWord;
     }
 
-
-    public void my(String word) {
-        List<Character> s = convertStringWordIntoCharArray(word);
-        System.out.print(getWordWithoutOddLetter(s));
-
-    }
 }
+

@@ -11,20 +11,44 @@ public class MyString {
     private static final int ASCII_VALUE_OF_ZERO = 48;
 
 
-    public String getTheLongestContinuosChainOfOnesAndZeros(String inpupData) {
+    /* public String getTheLongestContinuosChainOfOnesAndZeros(String inputData) {
+         String infoAboutOnes;
+         String infoAboutZeros;
+
+         ArrayList<Integer> indexesOfOnes = getIndexesOfOnesFromString(inputData);
+         ArrayList<Integer> indexesOfZeros = getIndexesOfZesoFromString(inputData);
+         if (!indexesOfOnes.isEmpty()) {
+             List<List> groupIndexesOfOnes = getGroupsOfIndexes(indexesOfOnes);
+             List<Integer> arrayListOfOnes = getTheLongestArrayList(groupIndexesOfOnes);
+             infoAboutOnes = "(" + arrayListOfOnes.get(0) + "," + arrayListOfOnes.get(arrayListOfOnes.size() - 1) + ")" + " цепочка единиц";
+         } else {
+             infoAboutOnes = " There aren't One's in string ";
+         }
+         if (!indexesOfZeros.isEmpty()) {
+             List<List> groupIndexesOfZeros = getGroupsOfIndexes(indexesOfZeros);
+             List<Integer> arrayListOfZeros = getTheLongestArrayList(groupIndexesOfZeros);
+             infoAboutZeros = "(" + arrayListOfZeros.get(0) + "," + arrayListOfZeros.get(arrayListOfZeros.size() - 1) + ")" + " цепочка нулей";
+         } else {
+             infoAboutZeros = " There aren't Zeros's in string";
+         }
+         logger.info(infoAboutOnes + infoAboutZeros);
+         return infoAboutOnes + infoAboutZeros;
+     }*/
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    public String getTheLongestContinuosChainOfOnesAndZeros(String inputData) {
         String infoAboutOnes;
         String infoAboutZeros;
 
-        ArrayList<Integer> indexesOfOnes = getIndexesOfOnesFromString(inpupData);
-        ArrayList<Integer> indexesOfZeros = getIndexesOfZesoFromString(inpupData);
+        ArrayList<Integer> indexesOfOnes = getIndexesOfOnesFromString(inputData);
+        ArrayList<Integer> indexesOfZeros = getIndexesOfZesoFromString(inputData);
         if (!indexesOfOnes.isEmpty()) {
             List<List> groupIndexesOfOnes = getGroupsOfIndexes(indexesOfOnes);
             List<Integer> arrayListOfOnes = getTheLongestArrayList(groupIndexesOfOnes);
             infoAboutOnes = "(" + arrayListOfOnes.get(0) + "," + arrayListOfOnes.get(arrayListOfOnes.size() - 1) + ")" + " цепочка единиц";
         } else {
-            infoAboutOnes = " There aren't One's in string";
+            infoAboutOnes = " There aren't One's in string ";
         }
-
         if (!indexesOfZeros.isEmpty()) {
             List<List> groupIndexesOfZeros = getGroupsOfIndexes(indexesOfZeros);
             List<Integer> arrayListOfZeros = getTheLongestArrayList(groupIndexesOfZeros);
@@ -32,13 +56,11 @@ public class MyString {
         } else {
             infoAboutZeros = " There aren't Zeros's in string";
         }
-
         logger.info(infoAboutOnes + infoAboutZeros);
-
         return infoAboutOnes + infoAboutZeros;
-
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////
     private ArrayList<Integer> getIndexesOfOnesFromString(String s) {
         ArrayList<Integer> indexesOfOnes = new ArrayList();
         for (int i = 0; i < s.length(); i++) {
@@ -116,7 +138,7 @@ public class MyString {
     public static void main(String[] args) {
 
         //   String s1 = "10010001110000001111";
-        String s1 = "101100122330";
+        String s1 = "";
         new MyString().my(s1);
 
     }
