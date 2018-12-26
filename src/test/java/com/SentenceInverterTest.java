@@ -21,8 +21,12 @@ SentenceInverter senInv;
     }
 
     @Test
-    public void tesThatConvertiongSentenseSuccessful() {
-        Assert.assertEquals(senInv.getConvertedSentence("Как решить   это задание   и не сломать себе   голову?"),"каК ршт отэ здне и н ьтамолс сб ?уволог ");
+    public void testThatConvertiongSentenseSuccessful() {
+        Assert.assertEquals(senInv.getConvertedSentence("   Как решить   это задание   и не сломать себе   голову?   "),"каК ршт отэ здне и н ьтамолс сб ?уволог ");
+    }
 
+    @Test
+    public void testThatConvertiongSentensewithPunctuationSignsSuccessful() {
+        Assert.assertEquals(senInv.getConvertedSentence("qwerty,  asdfg,,  ,,  dffdf.."),"ytrewq adg  dff ");
     }
 }
