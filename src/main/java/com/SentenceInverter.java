@@ -27,7 +27,7 @@ public class SentenceInverter {
     }
 
     private List<String> getListOfWordsFromSentence(String sentence) {
-        sentence = sentence.replaceAll("\\s{2,}", " ").replaceAll("\\p{P}", "");
+        sentence = sentence.trim().replaceAll("\\s{2,}", " ").replaceAll("\\p{P}", "");
         return Arrays.asList(sentence.split(" "));
     }
 
@@ -62,7 +62,7 @@ public class SentenceInverter {
     }
 
     public static void main(String[] args) {
-        new SentenceInverter().getConvertedSentence("Как решить это задание и не сломать себе голову?");
+  System.out.println(new SentenceInverter().getConvertedSentence("  Как решить это задание и не сломать себе голову?"));
     }
 
 

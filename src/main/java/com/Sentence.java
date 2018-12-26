@@ -22,8 +22,10 @@ public class Sentence {
             List<Integer> listOfIndexes = getIndexsesForbidenWord(listOfWords);
             List<String> listWithoutForbiddenWords = replaseWordInArrayList(listOfWords, listOfIndexes);
             for (String value : listWithoutForbiddenWords) {
-                processedSentence = processedSentence.concat(value + " ");
+                processedSentence = processedSentence.concat(value+" ");
             }
+        /*  processedSentence = String.join(" ",listWithoutForbiddenWords);*/
+
             log.info("Sentence without forbidden words;  " + processedSentence);
         }
 
