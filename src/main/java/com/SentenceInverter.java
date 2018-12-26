@@ -16,7 +16,7 @@ public class SentenceInverter {
                 if (i % 2 == 0) {
                     listOfWords.set(i, getWordWithOtherOrder(convertStringWordIntoCharArray(listOfWords.get(i))));
                 } else {
-                    listOfWords.set(i,  getWordWithoutOddLetter(convertStringWordIntoCharArray(listOfWords.get(i))));
+                    listOfWords.set(i, getWordWithoutOddLetter(convertStringWordIntoCharArray(listOfWords.get(i))));
                 }
             }
             for (String value : listOfWords) {
@@ -28,7 +28,6 @@ public class SentenceInverter {
 
     private List<String> getListOfWordsFromSentence(String sentence) {
         sentence = sentence.trim().replaceAll("\\s{2,}", " ");
-        //.replaceAll("\\p{P}", "")
         return Arrays.asList(sentence.split(" "));
     }
 
@@ -60,10 +59,4 @@ public class SentenceInverter {
         System.out.print(getWordWithoutOddLetter(s));
 
     }
-
-    public static void main(String[] args) {
-  System.out.println(new SentenceInverter().getConvertedSentence("qwerty,  asdfg,,  ,,  dffdf."));
-    }
-
-
 }
