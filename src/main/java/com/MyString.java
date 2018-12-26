@@ -3,6 +3,7 @@ package com;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class MyString {
@@ -56,16 +57,6 @@ public class MyString {
         return indexesOfZeros;
     }
 
- /*   private ArrayList<Integer> processingArrayList(ArrayList<Integer> listOfIndexes) {
-        for (int i = 0; i < listOfIndexes.size() - 1; i++) {
-            if (listOfIndexes.get(i).equals(listOfIndexes.get(i + 1) - 1)) {
-                listOfIndexes.remove(i + 1);
-            }
-        }
-        return listOfIndexes;
-    }*/
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
     private List<List> getGroupsOfIndexes(ArrayList<Integer> listOfIndexes) {
 
         List<List> listOfArrays = new ArrayList();
@@ -85,41 +76,10 @@ public class MyString {
             } else {
                 integers.add(listOfIndexes.get(i));
             }
-
-            listOfArrays.add(integers);
-        }
-        return listOfArrays;
-    }*/
-/////////////////////////////////////////////////////////////////////////////////
-
-    private List<List> getGroupsOfIndexes(ArrayList<Integer> listOfIndexes) {
-
-        List<List> listOfArrays = new ArrayList();
-        listOfIndexes.add(0);
-        for (int i = 0; i < listOfIndexes.size() - 1; i++) {
-            List<Integer> integers = new ArrayList<Integer>();
-            if (listOfIndexes.get(i).equals(listOfIndexes.get(i + 1) - 1)) {
-                for (int j = i; j < listOfIndexes.size() - 1; j++) {
-                    if (listOfIndexes.get(j).equals(listOfIndexes.get(j + 1) - 1)) {
-                        integers.add(listOfIndexes.get(j));
-                    } else if (!listOfIndexes.get(j).equals(listOfIndexes.get(j + 1) - 1)) {
-                        integers.add(listOfIndexes.get(j));
-                        i = j;
-                        break;
-                    }
-                }
-            } else {
-                integers.add(listOfIndexes.get(i));
-            }
-
             listOfArrays.add(integers);
         }
         return listOfArrays;
     }
-    ////////////////////////////////////////////////////////////////////////////
-
-
-
 
     public List<Integer> getTheLongestArrayList(List<List> list) {
         int maxSizeOfArray = 0;
@@ -142,8 +102,8 @@ public class MyString {
 
     public static void main(String[] args) {
 
-        //   String s1 = "10010001110000001111";
-        String s1 = "";
+           String s1 = "10010001110000001111";
+       /// String s1 = "";
         new MyString().my(s1);
 
     }
