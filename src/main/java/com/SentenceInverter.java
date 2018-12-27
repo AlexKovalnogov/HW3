@@ -16,7 +16,7 @@ public class SentenceInverter {
                 if (i % 2 == 0) {
                     listOfWords.set(i, getWordWithOtherOrder(convertStringWordIntoCharArray(listOfWords.get(i))));
                 } else {
-                    listOfWords.set(i,  getWordWithoutOddLetter(convertStringWordIntoCharArray(listOfWords.get(i))));
+                    listOfWords.set(i, getWordWithoutOddLetter(convertStringWordIntoCharArray(listOfWords.get(i))));
                 }
             }
             for (String value : listOfWords) {
@@ -27,10 +27,9 @@ public class SentenceInverter {
     }
 
     private List<String> getListOfWordsFromSentence(String sentence) {
-        sentence = sentence.replaceAll("\\s{2,}", " ").replaceAll("\\p{P}", "");
+        sentence = sentence.trim().replaceAll("\\s{2,}", " ");
         return Arrays.asList(sentence.split(" "));
     }
-
 
     private List<Character> convertStringWordIntoCharArray(String word) {
         List<Character> wordPresentInCharList = new ArrayList<Character>();
@@ -54,16 +53,5 @@ public class SentenceInverter {
         return outputWord;
     }
 
-
-    public void my(String word) {
-        List<Character> s = convertStringWordIntoCharArray(word);
-        System.out.print(getWordWithoutOddLetter(s));
-
-    }
-
-    public static void main(String[] args) {
-        new SentenceInverter().getConvertedSentence("Как решить это задание и не сломать себе голову?");
-    }
-
-
 }
+

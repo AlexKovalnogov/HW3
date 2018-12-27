@@ -3,6 +3,7 @@ package com;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class MyString {
@@ -11,20 +12,19 @@ public class MyString {
     private static final int ASCII_VALUE_OF_ZERO = 48;
 
 
-    public String getTheLongestContinuosChainOfOnesAndZeros(String inpupData) {
+    public String getTheLongestContinuosChainOfOnesAndZeros(String inputData) {
         String infoAboutOnes;
         String infoAboutZeros;
 
-        ArrayList<Integer> indexesOfOnes = getIndexesOfOnesFromString(inpupData);
-        ArrayList<Integer> indexesOfZeros = getIndexesOfZesoFromString(inpupData);
+        ArrayList<Integer> indexesOfOnes = getIndexesOfOnesFromString(inputData);
+        ArrayList<Integer> indexesOfZeros = getIndexesOfZesoFromString(inputData);
         if (!indexesOfOnes.isEmpty()) {
             List<List> groupIndexesOfOnes = getGroupsOfIndexes(indexesOfOnes);
             List<Integer> arrayListOfOnes = getTheLongestArrayList(groupIndexesOfOnes);
             infoAboutOnes = "(" + arrayListOfOnes.get(0) + "," + arrayListOfOnes.get(arrayListOfOnes.size() - 1) + ")" + " цепочка единиц";
         } else {
-            infoAboutOnes = " There aren't One's in string";
+            infoAboutOnes = " There aren't One's in string ";
         }
-
         if (!indexesOfZeros.isEmpty()) {
             List<List> groupIndexesOfZeros = getGroupsOfIndexes(indexesOfZeros);
             List<Integer> arrayListOfZeros = getTheLongestArrayList(groupIndexesOfZeros);
@@ -32,11 +32,8 @@ public class MyString {
         } else {
             infoAboutZeros = " There aren't Zeros's in string";
         }
-
         logger.info(infoAboutOnes + infoAboutZeros);
-
         return infoAboutOnes + infoAboutZeros;
-
     }
 
     private ArrayList<Integer> getIndexesOfOnesFromString(String s) {
@@ -59,16 +56,6 @@ public class MyString {
         return indexesOfZeros;
     }
 
- /*   private ArrayList<Integer> processingArrayList(ArrayList<Integer> listOfIndexes) {
-        for (int i = 0; i < listOfIndexes.size() - 1; i++) {
-            if (listOfIndexes.get(i).equals(listOfIndexes.get(i + 1) - 1)) {
-                listOfIndexes.remove(i + 1);
-            }
-        }
-        return listOfIndexes;
-    }*/
-
-
     private List<List> getGroupsOfIndexes(ArrayList<Integer> listOfIndexes) {
 
         List<List> listOfArrays = new ArrayList();
@@ -88,7 +75,6 @@ public class MyString {
             } else {
                 integers.add(listOfIndexes.get(i));
             }
-
             listOfArrays.add(integers);
         }
         return listOfArrays;
@@ -112,11 +98,10 @@ public class MyString {
         getTheLongestContinuosChainOfOnesAndZeros(s);
     }
 
-
     public static void main(String[] args) {
 
-        //   String s1 = "10010001110000001111";
-        String s1 = "101100122330";
+        String s1 = "10010001110000001111";
+        /// String s1 = "";
         new MyString().my(s1);
 
     }
