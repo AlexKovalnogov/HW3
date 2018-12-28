@@ -18,6 +18,7 @@ public class NewMyStringTest {
     public void testThatOnlyZerosAndOnesIsAvailableForProcessing() {
         Assert.assertEquals(newMyStr.getTheLongestGroupAndPositionOnesAndZerosInString("2222329995233546"), " There aren't One's in string    There aren't Zeros in string ");
     }
+
     @Test
     public void testThatEmptyStringIsProcessed() {
         Assert.assertEquals(newMyStr.getTheLongestGroupAndPositionOnesAndZerosInString(""), " There aren't One's in string    There aren't Zeros in string ");
