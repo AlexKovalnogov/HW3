@@ -90,14 +90,6 @@ public class NewMyString {
         }
         return containOne;
     }
-
-    public static void main(String[] args) {
-
-        String s1 = "111111";
-        new NewMyString().getTheLongestGroupAndPositionOnesAndZerosInString(s1);
-
-    }
-
 }
 
 
