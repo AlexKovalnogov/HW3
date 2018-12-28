@@ -55,11 +55,9 @@ public class MyString {
         }
         return indexesOfZeros;
     }
-
-    private List<List> getGroupsOfIndexes(ArrayList<Integer> listOfIndexes) {
-
+   private List<List> getGroupsOfIndexes(ArrayList<Integer> listOfIndexes) {
         List<List> listOfArrays = new ArrayList();
-        listOfIndexes.add(0);
+         listOfIndexes.add(0);
         for (int i = 0; i < listOfIndexes.size() - 1; i++) {
             List<Integer> integers = new ArrayList<Integer>();
             if (listOfIndexes.get(i).equals(listOfIndexes.get(i + 1) - 1)) {
@@ -79,6 +77,7 @@ public class MyString {
         }
         return listOfArrays;
     }
+
 
     public List<Integer> getTheLongestArrayList(List<List> list) {
         int maxSizeOfArray = 0;
