@@ -9,8 +9,8 @@ import java.util.List;
 public class Sentence {
 
 
-    private static final String REPLASED_WORD = "бяка";
-    private static final String WORD = "Replaced_World";
+    private static final String FORBIDDEN_WORD = "бяка";
+    private static final String WORD_FOR_REPLACEMENT = "Replaced_World";
 
     private Logger log = Logger.getLogger(Sentence.class);
 
@@ -18,14 +18,12 @@ public class Sentence {
         String processedSentence = "Sentence is empty!";
         if (sentence.length() > 0) {
             processedSentence = "";
-            List<String> listOfWords = splitSenteceByWordIntoList(sentence.trim().replaceAll("\\p{P}", "").replaceAll("\\s{2,}", " "));
+            List<String> listOfWords = splitSentenceByWordIntoList(sentence.trim().replaceAll("\\p{P}", "").replaceAll("\\s{2,}", " "));
             List<Integer> listOfIndexes = getIndexsesForbidenWord(listOfWords);
             List<String> listWithoutForbiddenWords = replaseWordInArrayList(listOfWords, listOfIndexes);
             for (String value : listWithoutForbiddenWords) {
                 processedSentence = processedSentence.concat(value+" ");
             }
-        /*  processedSentence = String.join(" ",listWithoutForbiddenWords);*/
-
             log.info("Sentence without forbidden words;  " + processedSentence);
         }
 
@@ -33,7 +31,7 @@ public class Sentence {
 
     }
 
-    private List<String> splitSenteceByWordIntoList(String inputSentence) {
+    private List<String> splitSentenceByWordIntoList(String inputSentence) {
         List<String> splittedSentence = Arrays.asList(inputSentence.split(" "));
         log.info("Splitting completed");
         return splittedSentence;
@@ -42,7 +40,7 @@ public class Sentence {
     private List<Integer> getIndexsesForbidenWord(List<String> listOfWorlds) {
         List<Integer> indexUslessWorld = new ArrayList();
         for (int i = 0; i < listOfWorlds.size(); i++) {
-            if (listOfWorlds.get(i).equals(REPLASED_WORD)) {
+            if (listOfWorlds.get(i).equals(FORBIDDEN_WORD)) {
                 indexUslessWorld.add(i);
             }
         }
@@ -51,7 +49,7 @@ public class Sentence {
 
     private List<String> replaseWordInArrayList(List<String> listOfWords, List<Integer> listOfIndexes) {
         for (int i = 0; i < listOfIndexes.size(); i++) {
-            listOfWords.set(listOfIndexes.get(i), WORD);
+            listOfWords.set(listOfIndexes.get(i), WORD_FOR_REPLACEMENT);
         }
         log.info("All forbidden words are replaced");
         return listOfWords;
