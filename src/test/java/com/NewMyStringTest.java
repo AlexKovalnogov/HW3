@@ -25,7 +25,7 @@ public class NewMyStringTest {
     }
 
     @Test
-    public void testThat() {
+    public void testThatFunctionCorrectShowsBeginAndFinishIndexesIfSequenceLengthEqualOne() {
         Assert.assertEquals(newMyStr.getTheLongestGroupAndPositionOnesAndZerosInString("10"), "(0 , 0 ) One-s  (1 , 1 ) Zeros");
     }
 
