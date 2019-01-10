@@ -15,17 +15,17 @@ public class SentenceInverterTest {
     }
 
     @Test
-    public void testThatUserNotifiedIfInPUTSentenceIsEmpty() {
+    public void testThatUserNotifiedIfInputSentenceIsEmpty() {
         Assert.assertEquals(senInv.getConvertedSentence(""), "String is empty");
     }
 
     @Test
-    public void testThatConvertiongSentenseSuccessful() {
+    public void testThatConvertingSentenceSuccessful() {
         Assert.assertEquals(senInv.getConvertedSentence("   Как решить   это задание   и не сломать себе   голову?   "), "каК ршт отэ здне и н ьтамолс сб ?уволог ");
     }
 
     @Test
-    public void testThatConvertiongSentensewithPunctuationSignsSuccessful() {
+    public void testThatConvertingSentenceWithPunctuationSignsSuccessful() {
         Assert.assertEquals(senInv.getConvertedSentence("qwerty,  asdfg,,  ,,  dffdf.."), "ytrewq adg  dff. ");
     }
 }
