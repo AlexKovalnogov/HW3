@@ -20,7 +20,7 @@ public class Sentence {
             processedSentence = "";
             List<String> listOfWords = splitSentenceByWordIntoList(sentence.trim().replaceAll("\\p{P}", "").replaceAll("\\s{2,}", " "));
             List<Integer> listOfIndexes = getIndexsesForbidenWord(listOfWords);
-            List<String> listWithoutForbiddenWords = replaseWordInArrayList(listOfWords, listOfIndexes);
+            List<String> listWithoutForbiddenWords = replaceWordInArrayList(listOfWords, listOfIndexes);
             for (String value : listWithoutForbiddenWords) {
                 processedSentence = processedSentence.concat(value+" ");
             }
@@ -47,7 +47,7 @@ public class Sentence {
         return indexUslessWorld;
     }
 
-    private List<String> replaseWordInArrayList(List<String> listOfWords, List<Integer> listOfIndexes) {
+    private List<String> replaceWordInArrayList(List<String> listOfWords, List<Integer> listOfIndexes) {
         for (int i = 0; i < listOfIndexes.size(); i++) {
             listOfWords.set(listOfIndexes.get(i), WORD_FOR_REPLACEMENT);
         }

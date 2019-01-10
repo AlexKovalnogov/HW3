@@ -37,7 +37,7 @@ public class SentenceInverter {
             wordPresentInCharList.add(word.charAt(i));
         }
         return wordPresentInCharList;
-        //  return Arrays.asList(word.toCharArray());
+
     }
 
     private String getWordWithOtherOrder(List<Character> list) {

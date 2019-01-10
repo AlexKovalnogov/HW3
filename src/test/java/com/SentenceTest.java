@@ -34,7 +34,7 @@ public class SentenceTest {
     }
 
     @Test
-    public void testThatSentenceProcessingIsCorrectIfSenteceContainsOnlyForbiddenWords() {
+    public void testThatSentenceProcessingIsCorrectIfSentenceContainsOnlyForbiddenWords() {
         Assert.assertEquals(sentence.getSentenceWithoutForbiddenWords("   бяка    бяка   бяка   "), "Replaced_World Replaced_World Replaced_World ");
     }
 }
